@@ -1,0 +1,22 @@
+Take Motion Sensor & MCU-PT
+Use IoT Custom Cable
+Motion Sensor (D0) -- MCU-PT (D0)
+Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py. Double click on main.py & Write code.
+
+from gpio import *
+from time import *
+
+def main():
+	count = 0
+	pinMode(0,IN)
+	while True:
+		if digitalRead(0) == HIGH:
+			print(count)
+			sleep(1)
+			count += 1
+
+if __name__ == "__main__":
+	main()
+  
+Click on Run
+Press Alt button then Start Counting
