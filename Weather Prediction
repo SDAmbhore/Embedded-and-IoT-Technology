@@ -1,0 +1,25 @@
+Take Alarm, MCU-PT, Humiture Sensor, Humidity Monitor & Humidifier
+Use IoT Custom Cable
+Alarm (D0) -- MCU-PT (D0)
+MCU-PT (D1) -- Humiture Sensor (A0) 
+Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py. Double click on main.py & Write code.
+
+from gpio import *
+from time import *
+
+def main():
+	while True:
+		val = digitalRead(0)
+		print (val)
+		if val >= 600:
+			digitalWrite(1,HIGH)
+			print("status : Carry your Umbrella")
+		else:
+			digitalWrite(1,LOW)
+			print("status : no need to carry Umbrella")
+			delay(500)
+
+if __name__ =="__main__":
+	main()
+
+Click on Run
