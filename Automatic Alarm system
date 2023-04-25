@@ -2,7 +2,7 @@ Take Motion Sensor, MCU-PT & Alarm
 Take IoT Custom Cable. 
 Motion Sensor (D0) -- MCU-PT (D0)
 MCU-PT (D1) -- Alarm (D0)
-Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py
+Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py. Double click on main.py & Write code.
 
 from gpio import *
 from time import *
