@@ -1,0 +1,23 @@
+Take Fan, SBC-PT & Motion Sensor
+Use IoT Custom Cable
+Fan (D0) -- SBC-PT (D0) 
+SBC-PT (D1) -- Motion Sensor (D0)
+Click on SBC-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py. Double click on main.py & Write code
+
+from gpio import *
+from time import *
+
+def main():
+	while True:
+		value = digitalRead(0)
+		if value >=1:
+			customWrite(1, "2")
+			print("Fan ON")
+		else:
+			customWrite(1, "0")
+			print("Fan OFF")
+			delay(500)
+if __name__ == "__main__":
+	main()
+  
+Click on Run 
