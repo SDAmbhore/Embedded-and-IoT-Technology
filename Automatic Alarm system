@@ -1,0 +1,23 @@
+Take Motion Sensor, MCU-PT & Alarm
+Take IoT Custom Cable. 
+Motion Sensor (D0) -- MCU-PT (D0)
+MCU-PT (D1) -- Alarm (D0)
+Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py
+
+from gpio import *
+from time import *
+
+def main():
+	pinMode(0,IN)
+	while True:
+		if digitalRead(0) == HIGH:
+			print("Alaram Activated")
+			digitalWrite(1,HIGH)
+		else:
+			print("Alarm DeActivated")
+			digitalWrite(1,LOW)
+			sleep(1)
+if __name__ == "__main__":
+	main()
+  
+Click on Run 
