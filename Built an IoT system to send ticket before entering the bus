@@ -1,0 +1,30 @@
+Take LCD, MCU-PT, RFID Reader, DLC, PC-PT, Door & RFID Card
+Use IoT Custom Cable
+LCD (D0) -- MCU-PT (D0) 
+Click on RFID Reader -- Advanced -- I/O Config -- Analog Slots. Set the value as 2, then close
+RFID Reader (A1) -- MCU-PT (A0) 
+Click on PC. Turn off the Switch. Remove the module. Add PT-IOT-NM 1W. Turn on the Switch
+Go to Config -- Interface -- Wireless0 -- SSID. Type "HomeGateway"
+Click on RFID Reader -- Advanced -- I/O Config -- Network Adapter. Select PT-IOT-NM 1W. Then go to Config. Under IoT Server, select Home Gateway
+Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py
+
+from gpio import *
+from time import *
+from ioeclient import IoEClient
+
+def main():
+	pinMode(0,OUT)
+	pinMode(1,IN)
+	
+	while True:
+		customWrite(0,"Waiting")
+		rfid = analogRead(A1)
+		if (rfid==0):
+			customWrite(0,"Sucessful")
+			delay(3000)
+
+if __name__ == "__main__":
+	main()
+
+Click on Run
+Drag RFID Card & Drop in front of RFID Reader
