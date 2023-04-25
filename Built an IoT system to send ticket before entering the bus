@@ -6,7 +6,7 @@ RFID Reader (A1) -- MCU-PT (A0)
 Click on PC. Turn off the Switch. Remove the module. Add PT-IOT-NM 1W. Turn on the Switch
 Go to Config -- Interface -- Wireless0 -- SSID. Type "HomeGateway"
 Click on RFID Reader -- Advanced -- I/O Config -- Network Adapter. Select PT-IOT-NM 1W. Then go to Config. Under IoT Server, select Home Gateway
-Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py
+Click on MCU-PT -- Programming -- New -- Empty-Python (under Template) -- Create -- main.py. Double click on main.py & Write code
 
 from gpio import *
 from time import *
